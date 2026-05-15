@@ -91,7 +91,7 @@ By carefully managing the ‘time budget’ during tuning, the approach balances
 
 Ultimately, this rigorous evaluation and tuning process supports scalable, automated credit scoring systems that minimize human bias and error, reduce operational costs, and improve portfolio quality—key factors that strengthen competitive advantage and drive long-term business growth in the increasingly data-driven financial services sector.
 
-![Performance Evaluation Table](table_22.png)
+![Performance Evaluation Table](data-science/assets/table_22.png)
 
 As shown in the evaluation results, the three machine learning models achieved accuracy scores ranging between 72% and 76%, with the Light Gradient Boosting Machine (LGBM) Classifier outperforming the others across all key metrics. This positions LGBM as the leading model in striking a crucial balance between precision and recall, which is essential for correctly approving creditworthy applicants while minimizing risky approvals. For lenders, this balanced performance translates into more reliable decisions that safeguard revenue while maintaining customer satisfaction through fair treatment.
 
