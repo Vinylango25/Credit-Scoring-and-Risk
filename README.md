@@ -113,7 +113,7 @@ The Light Gradient Boosting Machine (LGBM) classifier excels at correctly approv
 
 Additionally, LGBM demonstrates a relatively low false positive rate of 41%, indicating it effectively minimizes the rejection of valid loan applications. Avoiding false rejections is critical not only for protecting potential revenue but also for preserving customer satisfaction and brand reputation. Customers who are wrongly denied loans may seek alternatives or lose trust in the lender, so reducing this risk helps retain market share and fosters long-term client relationships.
 
-![Confusion Matrix Figure](fig2.png)
+![Confusion Matrix Figure](data-science/assets/fig2.png)
 
 Random Forest (RF) performs robustly, with a true positive rate of 82%, slightly behind LGBM. While RF remains a strong contender for loan approval tasks, its marginally lower ability to approve valid loans means it might miss some genuine applicants. This can lead to a small but notable reduction in revenue opportunities. However, RF still offers a good balance between precision and recall, supporting consistent decision-making in credit approvals and rejections.
 
@@ -130,7 +130,7 @@ Accurately evaluating the financial impact of machine learning models in lending
 The model assessments were performed using test data, simulating real-world scenarios where true borrower risk is unknown during application review. This approach validates how each model’s predictive accuracy translates into operational cost implications in practice, rather than relying on training data results that may overestimate performance. Such rigor ensures that the cost savings reported reflect realistic expectations of machine learning deployment in financial institutions.
 
 The breakdown of costs reveals that incorrect loan acceptance accounts for a significantly higher proportion of total labor costs, ranging between 49% to 54%. This aligns with the confusion matrix findings where false positives (incorrect approvals) occur more frequently than false negatives (incorrect rejections). Given the higher financial risk of wrongly approving bad loans, this insight highlights a critical area for further refinement. Focused efforts in improving data quality, feature engineering, and algorithm tuning will be vital to mitigate these costly errors.
-![Cost Evaluation Figure](cost.png)
+![Cost Evaluation Figure](data-science/assets/cost.png)
 Conversely, the cost contribution from incorrect rejections is lower, representing about 28% to 31% of total labor costs. Although these errors reduce potential revenue by denying creditworthy applicants, their financial impact is somewhat less immediate compared to losses from defaults. However, minimizing false rejections remains strategically important for customer satisfaction, brand loyalty, and long-term market competitiveness, emphasizing the need for balanced model optimization.
 
 Overall, the three machine learning models demonstrate notable cost-saving potential compared to traditional manual processing. The estimated labor cost reductions range from 14% to 23%, showcasing the operational efficiency gains that automation can deliver. Notably, the LGBM model achieves the highest savings at 23%, reaffirming its superior balance of predictive accuracy and risk management seen in earlier evaluations.
@@ -146,11 +146,11 @@ Having identified the LGBM model as the best performer among those tested, we fu
 The analysis reveals that both the optimal probability decision threshold and the resulting accuracy of the LGBM model are highly dependent on the chosen class weights. This implies that lending institutions can strategically adjust these parameters to align the model’s decision boundary with their risk appetite and operational goals. For example, increasing the weight on the rejection class may reduce risky loan approvals but could also increase false rejections, impacting customer experience. Hence, this flexibility enables a tailored approach to risk management and cost optimization in automated lending decisions.
 
 
-<img src="cw.png" alt="Cost Evaluation" width="750">
+<img src="data-science/assets/cw.png" alt="Cost Evaluation" width="750">
 
 For this specific credit scoring problem, the optimal accuracy was achieved when the class weights were set to `{0: 1, 1: 2}`, meaning the model places twice as much importance on correctly identifying the positive class (loan rejections) relative to the negative class (loan approvals). At this weighting, the probability decision threshold that maximizes model performance is approximately **0.6435**. This adjustment reflects a strategic business choice to prioritize reducing false negatives—i.e., minimizing the risk of incorrectly approving high-risk loan applicants. By doing so, financial institutions can more effectively mitigate potential losses from defaults, strengthening overall risk management while maintaining a balanced level of loan approvals to support business growth.
 
-<img src="fig3.png" alt="Cost Evaluation" width="750">
+<img src="data-science/assets/fig3.png" alt="Cost Evaluation" width="750">
 
 The accompanying figure illustrates how the probability decision threshold varies as the difference between class weights changes. Notably, when the class weights are more balanced (closer in value), the model requires a lower threshold to reach high accuracy, meaning it is more lenient in approving loans. Conversely, as the disparity between the class weights increases, the threshold rises, reflecting a more conservative approval stance. This relationship highlights the flexibility lenders have to calibrate their risk tolerance and operational priorities through class weighting and threshold selection, tailoring the automated decision-making process to optimize the trade-off between maximizing revenue and minimizing credit risk.
 
